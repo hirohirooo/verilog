@@ -14,6 +14,7 @@ module fifo(in, we, full, out, re, empty, clk, rst);
 		if(rst) begin
 			head <= 0;
 			tail <= 0;
+			out <= 0;
 		end else begin
 			if(we && ~full) begin
 				head <= head + 1;
@@ -22,8 +23,6 @@ module fifo(in, we, full, out, re, empty, clk, rst);
 			if(re && ~empty) begin
 				tail <= tail + 1;
 				out <= mem[tail];
-			end else begin
-				out <= 0;
 			end
 		end
 	end
