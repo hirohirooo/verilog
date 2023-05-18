@@ -1,0 +1,33 @@
+$date
+	Fri Apr 14 10:23:40 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module sim $end
+$scope module test $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0"
+0!
+$end
+#10
+1"
+1!
+#25
+0"
+0!
+#35
+1"
+1!
+#45
+0"
+0!

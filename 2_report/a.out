@@ -1,0 +1,50 @@
+#! /opt/homebrew/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2009.vpi";
+S_0x134f05150 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x134f052c0 .scope module, "sim" "sim" 3 7;
+ .timescale 0 0;
+v0x134f18c50_0 .var "a", 0 0;
+v0x134f18d00_0 .net "b", 0 0, L_0x134f18db0;  1 drivers
+S_0x134f05a80 .scope module, "test" "test" 3 9, 3 1 0, S_0x134f052c0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "b";
+L_0x134f18db0 .functor BUFZ 1, v0x134f18c50_0, C4<0>, C4<0>, C4<0>;
+v0x134f081f0_0 .net "a", 0 0, v0x134f18c50_0;  1 drivers
+v0x134f18ba0_0 .net "b", 0 0, L_0x134f18db0;  alias, 1 drivers
+    .scope S_0x134f052c0;
+T_0 ;
+    %vpi_call/w 3 11 "$dumpfile", "test.vcd" {0 0 0};
+    %vpi_call/w 3 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x134f05a80 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x134f18c50_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x134f18c50_0, 0, 1;
+    %delay 15, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x134f18c50_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x134f18c50_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x134f18c50_0, 0, 1;
+    %vpi_call/w 3 22 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "test.sv";
