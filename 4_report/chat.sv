@@ -3,7 +3,7 @@ module chat(input in,clk,rst,output logic out);
     logic val; 
 
     always_ff @(negedge clk) begin
-        if(rst) val <= 0;
+        if(rst) val <= 1;
         else begin
             if(!in) val <= 1;
             else val <= val;
