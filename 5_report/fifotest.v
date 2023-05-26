@@ -1,7 +1,12 @@
+`timescale 1ns/10ps
 module fifotest;
-	logic [7:0] in, out;
-	logic we, re;
-	logic clk, rst;
+	reg [7:0] in;
+	reg we;
+	wire full;
+	wire [7:0] out;
+	reg re;
+	wire empty;
+	reg clk, rst;
 	fifo fifo(in, we, full, out, re, empty, clk, rst);
 	always #5 clk = ~clk;
 initial begin
