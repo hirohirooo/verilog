@@ -1,4 +1,3 @@
-// 次のmoduleの合成上の誤りを直せ
 module ex(
     input a, 
     output logic b, 
@@ -9,7 +8,6 @@ module ex(
     always @(posedge clk) begin
         if(rst) begin
             s <= 0;
-            // b <= 0;
         end else begin
             s <= ns;
         end
@@ -35,3 +33,4 @@ module ex(
         endcase
     end
 endmodule
+
