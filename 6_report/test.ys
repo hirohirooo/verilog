@@ -1,5 +1,5 @@
 #test.ys
-read_verilog -sv fifo.sv #ファイル名指定
+read_verilog -sv venmac.sv #ファイル名指定
 read_liberty -lib ../../osu018_stdcells.lib
 proc
 flatten
