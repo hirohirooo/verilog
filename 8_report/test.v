@@ -1,6 +1,8 @@
+`timescale 1ns/1ps
 module test;
-    logic clk,rst;
-    top top(clk,rst);
+    reg clk, rst;
+	wire [15:0] wd;
+	top top(we, wd, clk, rst);
     always #5 clk = ~clk;
     initial begin
     $dumpfile("fibo.vcd");
