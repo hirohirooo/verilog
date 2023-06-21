@@ -1,4 +1,5 @@
 `include "pu.vh"
+//alu alu(ao, bo, op, lp, dstb, ze, ca, sg, clk, rst);
 module alu(
 	input [`WIDTH:0] a, b,
 	input [`OPS:0] op,

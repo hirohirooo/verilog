@@ -8,9 +8,9 @@ module pc(
 
 	always @(posedge clk or posedge rst)
 		if(rst) pc <= 0;
-		else if(!halt) begin //haltが立つと止まる
+		else if(!halt) begin
 			//ジャンプ命令
-			if(we==1) pc<=rwd; //何かしら計算したrwdの値でpcを置き換える
-			else pc <= pc + 1; //ほっておくとどんどん増えていく
+			if(we==1) pc<=rwd;
+			else pc <= pc + 1;
 		end
 endmodule
